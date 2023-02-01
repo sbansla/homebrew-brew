@@ -36,7 +36,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{github.event.inputs.version}}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           prerelease: ${{github.event.inputs.pre-release}}
   notify-complete-fail:
     if: ${{ failure() || cancelled() }}
